@@ -1,42 +1,38 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Rubik", sans-serif ;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Rubik", sans-serif;
+    -webkit-font-smoothig: antialiased;
 }
 
 :root {
-    --bg-color: #f4f6fa;
-    --pontuacao-bg: #fff;
-    --bg-span: #f4f6fa;
+    --bg-color:#f4f6fa; 
+    --bg-span:#f4f6fa;
     --color-span: #626c7f;
-    --purple: #a729f5;
-    --purple-hover: rgb(167, 41, 245, 0.7);
-    --white: #ffff;
-    --button-bg: #fff;
-    --bg-html: #ffe1e9;
-    --bg-css: #e0fdef;
-    --bg-javascript: #ebf0ff;
-    --bg-acesibilidade: #f6e7ff;
+    --purple:#a729f5;
+    --purple-hover:rgba(167, 41, 245, 0.6);
+    --primary-text-color:#313e51;
+    --secondary-text-color:#626c7f;
+    --pontuacao-bg:#fff;
     --shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
-    --primary-text-color: #313e51;
-    --secondary-text-color: #626c7f;
-    --green: #26d782;
-    --red: #ee5454;
-    --bg-desktop: url(../../assets/images/pattern-background-desktop-light.svg);
+    --bg-html:#fff1e9;
+    --bg-css:#e0fdef;
+    --bg-javascript:#ebf0ff;
+    --bg_acessibilidade:#f6e7ff;
+    --white:#fff;
     --bg-mobile: url(../../assets/images/pattern-background-mobile-light.svg);
+    --bg-desktop: url(../../assets/images/pattern-background-desktop-light.svg);
 }
 
 body.escuro {
-    --bg-desktop: url(../../assets/images/pattern-background-desktop-dark.svg);
+    --bg-color:#313e51;
+    --color-span:#313e51;
     --bg-mobile: url(../../assets/images/pattern-background-mobile-dark.svg);
-    --bg-color: #313e51;
-    --color-span: #313e51;
-    --primary-text-color: #fff;
-    --secondary-text-color: #abc1e1;
-    --button-bg: #3b4d66;
-    --pontuacao-bg: #3b4d66;
+    --bg-desktop: url(../../assets/images/pattern-background-desktop-dark.svg);
+    --primary-text-color:#fff;
+    --secondary-text-color:#abc1e1;
+    --pontuacao-bg:#3b4d66;
     --shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
 }
 
@@ -60,11 +56,27 @@ header {
 }
 
 .assunto_icone {
-    background: var(--bg-acesibilidade);
+    background: var(--bg_acessibilidade);
     width: 40px;
     height: 40px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.assunto_icone.html {
+    background: var(--bg-html);
+}
+
+.assunto_icone.css {
+    background: var(--bg-css);
+}
+
+.assunto_icone.javascript {
+    background: var(--bg-javascript);
+}
+
+.assunto_icone.acessibilidade {
+    background: var(--bg_acessibilidade);
 }
 
 .assunto_icone img {
@@ -84,7 +96,7 @@ header {
     gap: 8px;
 }
 
-.tema img {
+.tema img{
     width: 16px;
 }
 
@@ -104,22 +116,6 @@ header {
     width: 12px;
     height: 12px;
     border-radius: 999px;
-}
-
-main {
-    display: flex;
-    gap: 140px;
-    max-width: 1160px;
-    margin-inline: auto;
-}
-
-main h2,
-main > div {
-    width: 100%;
-}
-
-main h2 {
-    font-size: 64px;
 }
 
 main {
@@ -149,6 +145,7 @@ main h2 strong {
     box-shadow: var(--shadow);
 }
 
+
 .pontuacao strong {
     font-size: 88px;
     color: var(--primary-text-color);
@@ -163,13 +160,15 @@ main h2 strong {
 main button {
     padding: 16px;
     border-radius: 12px;
-    border: 0;
+    border: none;
     background: var(--purple);
     color: var(--white);
     width: 100%;
+
     font-size: 18px;
     font-weight: 500;
-    transition: background 0.3s;
+
+    transition: background 0.7s;
     box-shadow: var(--shadow);
 }
 
@@ -178,9 +177,8 @@ main button:hover {
     cursor: pointer;
 }
 
-@media(min-width:1100px) {
-
-    .body {
+@media(min-width: 1100px){
+    body {
         background: var(--bg-desktop) var(--bg-color);
         background-size: cover;
         background-repeat: no-repeat;
@@ -214,7 +212,7 @@ main button:hover {
         width: 48px;
         height: 28px;
     }
-
+    
     .tema button div {
         width: 20px;
         height: 20px;
@@ -226,10 +224,12 @@ main button:hover {
         max-width: 1160px;
         margin-inline: auto;
     }
+
     main h2,
     main > div {
         width: 100%;
     }
+
     main h2 {
         font-size: 64px;
     }
@@ -242,7 +242,7 @@ main button:hover {
     .pontuacao strong {
         font-size: 144px;
     }
-
+    
     .pontuacao p {
         font-size: 24px;
     }
@@ -252,5 +252,4 @@ main button:hover {
         padding: 24px;
         border-radius: 24px;
     }
-
 }
