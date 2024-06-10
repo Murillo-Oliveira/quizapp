@@ -2,8 +2,9 @@ let tema = "claro"
 
 const botaoTema = document.querySelector(".tema button")
 botaoTema.addEventListener("click", trocarTema)
+import { trocarTema, verificarTema } from "./helpers/tema-helper.js"
 
-
+const botaoTema = document.querySelector(".tema button")
 const body = document.querySelector("body")
 
 function trocarTema() {
@@ -30,4 +31,10 @@ function verificarTema() {
     }
 }
 
+botaoTema.addEventListener("click", () => {
+    trocarTema(body, botaoTema)
+})
+
 verificarTema()
+
+verificarTema (body, botaoTema)
